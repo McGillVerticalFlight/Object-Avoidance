@@ -28,7 +28,7 @@ def templateMatch():
 
         # all template matching methods in openCV library: [cv2.TM_CCOEFF, cv2.TM_CCOEFF_NORMED, cv2.TM_CCORR, cv2.TM_CCORR_NORMED
         # , cv2.TM_SQDIFF, cv2.TM_SQDIFF_NORMED]
-        #best methods: [cv2.TM_CCOEFF, cv2.TM_CCOEFF_NORMED]
+        #best methods: [cv2.TM_CCOEFF_NORMED]
 
 
         img2 = frame.copy()
@@ -44,7 +44,7 @@ def templateMatch():
             top_left = max_loc
 
 
-        if((method in [cv2.TM_CCOEFF_NORMED,cv2.TM_CCORR_NORMED,cv2.TM_SQDIFF_NORMED]) and (max_val >= 0.5)):
+        if((method in [cv2.TM_CCOEFF_NORMED,cv2.TM_CCORR_NORMED,cv2.TM_SQDIFF_NORMED]) and (min_val <= -0.31) and (max_val >= 0.55)):
             #draw rectangle around the match
             bottom_right = (top_left[0] + w, top_left[1] + h)
             cv2.rectangle(img2,top_left,bottom_right,255,5)
