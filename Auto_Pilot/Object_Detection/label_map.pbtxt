@@ -1,0 +1,8 @@
+item { 
+	name:'person'
+	id:1
+}
+item { 
+	name:'landingPad'
+	id:2
+}
